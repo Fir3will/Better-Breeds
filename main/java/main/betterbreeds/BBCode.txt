@@ -1,0 +1,111 @@
+[IMG]http://i1279.photobucket.com/albums/y523/textcraft/Mar%202015%20-%201/f9c9c6f55fb094962271d363d25905235c862e1a5fc43d6ea8ef5edbbfb3d3e08b9828f3ae0da68eda39a3ee5e6b4b0d3255bfef95601890afd80709707c35b0c42ffb5205d6_zps111eec8c.png[/IMG]
+[font=monaco][i]The Better Breeds mod changes at how you look at your animals and how they look at you! This mod adds in genders to animals. So you can't breed animals that are the same gender! Isn't that something we always wanted to see in Minecraft? It also adds in tons of textures for all the simple animals of minecraft! There are also multiple config options to customize the mod to your liking![/i][/font]
+
+[img]http://i1279.photobucket.com/albums/y523/textcraft/Sep%202014%20-%201/4ceb798356ef2f06f36986ce01015f27b61bed35da39a3ee5e6b4b0d3255bfef95601890afd80709da39a3ee5e6b4b0d3255bfef95601890afd80709d1130d71d380fcb7796f_zpscd466a37.png[/img]
+[spoiler]
+The animals currently switched are:
+- The Chicken
+- The Cow
+- The Wolf
+- The Sheep
+- The Pig
+
+To breed animals, there are some prerequisites:
+- They have to be a male and a female. They can't be both male or both female
+- They have to be in the best health. Meaning max health.
+- They have to be different species... Obviously
+- And they have to both be in love!
+
+NOTE: These options are customizable in the config.
+
+[b]How to tell an animal's gender:[/b]
+[spoiler]
+Note: Every male has a deeper voice, and the female's have a lighter voice. That's also another way to tell them apart.
+
+Chicken:
+[img]http://i.imgur.com/dLSp2PM.png[/img]
+If you look under the chicken's head, you'll see that it's wattle (that small red pouch near it's neck) is different colors. The male's wattle is dark red and the female's lighter red.
+Male- Dark Red Wattle
+Female- Pink Wattle
+
+Pig:
+[img]http://i.imgur.com/QL40tjk.png[/img]
+Here, the animal's noses are different from each other. The colors are different. The male's nose is a darker shade of pink. The female's nose is a light brown.
+Male- Dark Nose
+Female- Light Brown Nose
+
+Cow:
+[img]http://i.imgur.com/pesicx4.png[/img]
+Again, the animal's noses are different colors. The male's nose is black but the female's is white.
+Male- Black Nostrils
+Female- White Nostrils
+
+Sheep:
+[img]http://i.imgur.com/CjD8nWx.png[/img]
+It's kind of obvious but one of the animal's mouth is a darker red. The male has the dark red mouth, while the female has a pinkish mouth. 
+Male- Dark Red Mouth
+Female- Light Red Mouth
+
+Wolf:
+[img]http://i.imgur.com/5pMe3pL.png[/img]
+If you look closely, the male has dark green eyes. But the female has dark blue eyes.
+Male- Dark Green Eyes
+Female- Dark Blue Eyes
+[/spoiler]
+
+I also added tons of different textures for each animal. There are 10 textures for all the switched animals! When an animal's born, there is a 50% chance (can be changed in the config) that the offspring will have the same texture as one of the parents. The only animal what wasn't textured differently was the Sheep. That couldn't get too much of a different texture because it was color-based but I will try something. Make patterns in the wool, etc.
+[/spoiler]
+
+[img]http://i1279.photobucket.com/albums/y523/textcraft/Aug%202014%20-%204/90d2496cb9b91c63e3c0a4b0018635d5391f6a75da39a3ee5e6b4b0d3255bfef95601890afd80709da39a3ee5e6b4b0d3255bfef95601890afd80709e70d6f1c27e7e53ed5da_zps6d0bbdc5.png[/img]
+[spoiler]
+[b]Feel free to do a review! All reviews are welcome![/b]
+
+Hilarious Mod Review by: YourMC, [Version: 0.2b]
+Youtube Channel: [url=https://www.youtube.com/channel/UCWuMBAV3lvHSmuOg5ZrQVvg]TheMinecraftHippie | Minecraft Mods[/url]
+Forums Page: [url=http://www.minecraftforum.net/members/YourMC]YourMC[/url]
+[youtube]YuEGKyL2fQQ[/youtube]
+[/spoiler]
+
+[/center]
+[img]http://i1279.photobucket.com/albums/y523/textcraft/Aug%202014%20-%204/5ab9b81f3af95559f1f644cd891606ac499ec737da39a3ee5e6b4b0d3255bfef95601890afd80709da39a3ee5e6b4b0d3255bfef95601890afd80709e70d6f1c27e7e53ed5da_zps32188083.png[/img]
+[color=rgb(153, 153, 153)]1. Make sure you have the correct version of Forge and Minecraft[/color]
+[color=rgb(153, 153, 153)]2. Download one of the Version Jars below[/color]
+[color=rgb(153, 153, 153)]3. Go to the forge-created mod folder in your minecraft directory.[/color]
+[color=rgb(153, 153, 153)]4. Place the Better Breeds Jar inside of the mods folder.[/color]
+[color=rgb(153, 153, 153)]5. Enjoy![/color]
+[color=rgb(153, 153, 153)]If you have any issues or Crash Reports, Feel free to post a comment below![/color]
+
+[img]http://i1279.photobucket.com/albums/y523/textcraft/Aug%202014%20-%204/6bd82992110e09a39eb5bbcb9a3a143895eba286da39a3ee5e6b4b0d3255bfef95601890afd80709da39a3ee5e6b4b0d3255bfef95601890afd80709e70d6f1c27e7e53ed5da_zps6f2d421b.png[/img]
+[spoiler]
+~~0.2b~~ 1.7.10- [url=http://www.mediafire.com/download/0wi3sbzxtwri71g/something.jar]Click Here![/url]
+[spoiler]
+- Added Multiplayer Compatibility
+
+[color=red][b]NOTE: This mod does not work in 1.7.2![/b][/color]
+[/spoiler]
+
+~~0.1b~~ 1.7.10- [url=http://www.mediafire.com/download/xlavgz1frn0u7ba]Click Here![/url]
+[spoiler]
+- Added tons of textures for switched animals.
+- Added genders to switched animals.
+- Added a different method of breeding to switched animals.
+
+[color=red][b]NOTE: This mod does not work in 1.7.2![/b][/color]
+[/spoiler]
+[/spoiler]
+
+[img]http://i1279.photobucket.com/albums/y523/textcraft/Aug%202014%20-%204/4389454ee0098ab64e8d20fa6ead167530711836da39a3ee5e6b4b0d3255bfef95601890afd80709da39a3ee5e6b4b0d3255bfef95601890afd807094f829e5e3095a6f237ee_zpsb4568aa0.png[/img]
+[spoiler]
+Place this in your Signature:
+[code]
+[url=http://www.minecraftforum.net/forums/mapping-and-modding/minecraft-mods/wip-mods/2330761-1-7-10-0-1b-better-breeds-mod-different-gender][img]http://i1279.photobucket.com/albums/y523/textcraft/Jan%202015%20-%203/aba912636d51e6c8ec6d823611c9a64cd1679d30c0f2ae0896cc5be08a3b3767ead78ddb962fa05cda39a3ee5e6b4b0d3255bfef95601890afd8070963070538f4b38aad8cbe_zps19f70794.png[/img][/url]
+[/code]
+[url=http://www.minecraftforum.net/forums/mapping-and-modding/minecraft-mods/wip-mods/2330761-1-7-10-0-1b-better-breeds-mod-different-gender][img]http://i1279.photobucket.com/albums/y523/textcraft/Jan%202015%20-%203/aba912636d51e6c8ec6d823611c9a64cd1679d30c0f2ae0896cc5be08a3b3767ead78ddb962fa05cda39a3ee5e6b4b0d3255bfef95601890afd8070963070538f4b38aad8cbe_zps19f70794.png[/img][/url]
+[/spoiler]
+[/center]
+
+[img]http://i1279.photobucket.com/albums/y523/textcraft/Aug%202014%20-%204/fcd9edf7490bfa41dede583deebb184e5424fea0da39a3ee5e6b4b0d3255bfef95601890afd80709da39a3ee5e6b4b0d3255bfef95601890afd80709e70d6f1c27e7e53ed5da_zps4200c68a.png[/img]
+[spoiler=License]
+This mod (Henceforth "Better Breeds Mod" or "Better Breeds") Is in no way to be redistributed without consent through Email, Message, Text, Call, etc. (Review this with the Owner). Using any URL shorteners or any other service from where you are able to profit from this mod are strictly forbidden. Any violation to this terms of use or Licence will result in major penalty from the Mod Creator and from outside sources. Proceed with Caution, but Have Fun!
+[/spoiler]
+[/center]

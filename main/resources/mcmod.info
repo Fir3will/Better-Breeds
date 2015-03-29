@@ -1,0 +1,16 @@
+[
+{
+  "modid": "betterbreeds",
+  "name": "Better Breeds",
+  "description": "Giving players a more realistic experience about farming with animals. Introduces genders, the animal's mood, health, and even tons of different textures!",
+  "version": "0.2b",
+  "mcversion": "1.7.10",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Fir3will"],
+  "credits": "Fir3will for making this mod",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
