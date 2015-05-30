@@ -1,8 +1,8 @@
 package main.betterbreeds.render;
 
 import main.betterbreeds.BetterBreeds;
+import main.betterbreeds.api.Genderized;
 import main.betterbreeds.entities.Gender;
-import main.betterbreeds.entities.Gender.Genderized;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.ModelSheep1;
 import net.minecraft.client.model.ModelSheep2;

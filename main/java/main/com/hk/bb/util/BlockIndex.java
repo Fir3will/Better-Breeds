@@ -6,6 +6,7 @@ import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ForgeHooks;
 
@@ -48,6 +49,11 @@ public class BlockIndex
 	public Block getBlock()
 	{
 		return block;
+	}
+
+	public TileEntity getTileEntity()
+	{
+		return world.getTileEntity(x, y, z);
 	}
 
 	public float getHardness()

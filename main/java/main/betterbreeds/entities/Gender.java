@@ -2,26 +2,16 @@ package main.betterbreeds.entities;
 
 import main.betterbreeds.BetterBreeds;
 import main.betterbreeds.Config;
+import main.betterbreeds.api.Genderized;
 import main.com.hk.bb.util.Rand;
 import net.minecraft.entity.passive.EntityAnimal;
 import net.minecraft.util.ResourceLocation;
 
 public class Gender
 {
-	public interface Genderized
-	{
-		public boolean isFemale();
-
-		public void setFemale(boolean female);
-
-		public int getType();
-
-		public void setType(int type);
-	}
-
 	public static boolean canMate(Genderized a, Genderized b)
 	{
-		if (!isAnimal(a) || !isAnimal(b)) return false;
+		if (!isAnimal(a) || !isAnimal(b) || a.isPregnant() || b.isPregnant()) return false;
 		final EntityAnimal an = (EntityAnimal) a;
 		final EntityAnimal bn = (EntityAnimal) b;
 		final boolean inLove = an.isInLove() && bn.isInLove();
@@ -48,6 +38,19 @@ public class Gender
 		return entity.getDataWatcher().getWatchableObjectInt(25) == 0;
 	}
 
+	public static void setPregnant(EntityAnimal entity, boolean pregnant)
+	{
+		if (((Genderized) entity).isFemale())
+		{
+			entity.getDataWatcher().updateObject(27, pregnant ? 0 : 1);
+		}
+	}
+
+	public static boolean isPregnant(EntityAnimal entity)
+	{
+		return ((Genderized) entity).isFemale() ? entity.getDataWatcher().getWatchableObjectInt(27) == 0 : false;
+	}
+
 	public static void setType(EntityAnimal entity, int type)
 	{
 		entity.getDataWatcher().updateObject(26, type);
@@ -62,6 +65,7 @@ public class Gender
 	{
 		entity.getDataWatcher().addObject(25, 0);
 		entity.getDataWatcher().addObject(26, 0);
+		entity.getDataWatcher().addObject(27, 0);
 	}
 
 	public static int getMixBetween(int maxTextures, Genderized a, Genderized b)

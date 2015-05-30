@@ -33,8 +33,9 @@ public class AnimTickHandler
 		{
 			if (event.phase == Phase.START)
 			{
-				for (final IMCAnimatedEntity entity : activeEntities)
+				for (int i = 0; i < activeEntities.size(); i++)
 				{
+					IMCAnimatedEntity entity = activeEntities.get(i);
 					entity.getAnimationHandler().animationsUpdate();
 
 					if (entity.isEntity() && ((Entity) entity).isDead)
@@ -64,8 +65,9 @@ public class AnimTickHandler
 		{
 			if (event.phase == Phase.START)
 			{
-				for (final IMCAnimatedEntity entity : activeEntities)
+				for (int i = 0; i < activeEntities.size(); i++)
 				{
+					IMCAnimatedEntity entity = activeEntities.get(i);
 					entity.getAnimationHandler().animationsUpdate();
 
 					if (entity.isEntity() && ((Entity) entity).isDead)

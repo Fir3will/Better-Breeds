@@ -1,6 +1,6 @@
 package main.betterbreeds.entities;
 
-import main.betterbreeds.entities.Gender.Genderized;
+import main.betterbreeds.api.Genderized;
 import main.com.hk.bb.util.Rand;
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.passive.EntityAnimal;
@@ -64,6 +64,18 @@ public class EntityBWolf extends EntityWolf implements Genderized
 	public void setFemale(boolean isFemale)
 	{
 		Gender.setFemale(this, isFemale);
+	}
+
+	@Override
+	public boolean isPregnant()
+	{
+		return Gender.isPregnant(this);
+	}
+
+	@Override
+	public void setPregnant(boolean pregnant)
+	{
+		Gender.setPregnant(this, pregnant);
 	}
 
 	@Override

@@ -1,6 +1,6 @@
 package main.betterbreeds.entities;
 
-import main.betterbreeds.entities.Gender.Genderized;
+import main.betterbreeds.api.Genderized;
 import main.com.hk.bb.util.Rand;
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.passive.EntityAnimal;
@@ -70,22 +70,31 @@ public class EntityBCow extends EntityCow implements Genderized
 	}
 
 	@Override
+	public boolean isPregnant()
+	{
+		return Gender.isPregnant(this);
+	}
+
+	@Override
+	public void setPregnant(boolean pregnant)
+	{
+		Gender.setPregnant(this, pregnant);
+	}
+
+	@Override
 	public boolean interact(EntityPlayer p_70085_1_)
 	{
 		final ItemStack itemstack = p_70085_1_.inventory.getCurrentItem();
 
 		if (itemstack != null && itemstack.getItem() == Items.bucket && !p_70085_1_.capabilities.isCreativeMode)
 		{
-			if (!isFemale())
+			if (!isFemale()) if (itemstack.stackSize-- == 1)
 			{
-				if (itemstack.stackSize-- == 1)
-				{
-					p_70085_1_.inventory.setInventorySlotContents(p_70085_1_.inventory.currentItem, new ItemStack(Items.milk_bucket));
-				}
-				else if (!p_70085_1_.inventory.addItemStackToInventory(new ItemStack(Items.milk_bucket)))
-				{
-					p_70085_1_.dropPlayerItemWithRandomChoice(new ItemStack(Items.milk_bucket, 1, 0), false);
-				}
+				p_70085_1_.inventory.setInventorySlotContents(p_70085_1_.inventory.currentItem, new ItemStack(Items.milk_bucket));
+			}
+			else if (!p_70085_1_.inventory.addItemStackToInventory(new ItemStack(Items.milk_bucket)))
+			{
+				p_70085_1_.dropPlayerItemWithRandomChoice(new ItemStack(Items.milk_bucket, 1, 0), false);
 			}
 
 			return true;

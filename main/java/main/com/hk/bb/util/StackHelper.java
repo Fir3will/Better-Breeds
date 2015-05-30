@@ -52,9 +52,7 @@ public class StackHelper
 		if (stacks != null)
 		{
 			for (final ItemStack stack : stacks)
-			{
 				if (stack != null) return false;
-			}
 		}
 		return true;
 	}
@@ -62,12 +60,10 @@ public class StackHelper
 	public static void getRidOfNulls(ItemStack... stacks)
 	{
 		for (int i = 0; i < stacks.length; i++)
-		{
 			if (stacks[i] != null && stacks[i].stackSize <= 0)
 			{
 				stacks[i] = null;
 			}
-		}
 	}
 
 	public static boolean canStacksMerge(ItemStack stack1, ItemStack stack2)
@@ -172,25 +168,22 @@ public class StackHelper
 		if (par1ItemStack == null || slot < 0 || slot >= inv.getSizeInventory()) return false;
 		boolean flag1 = false;
 		ItemStack itemstack1 = inv.getStackInSlot(slot);
-		if (par1ItemStack.isStackable())
+		if (par1ItemStack.isStackable()) if (itemstack1 != null && itemstack1.getItem() == par1ItemStack.getItem() && (!par1ItemStack.getHasSubtypes() || par1ItemStack.getItemDamage() == itemstack1.getItemDamage()) && ItemStack.areItemStackTagsEqual(par1ItemStack, itemstack1))
 		{
-			if (itemstack1 != null && itemstack1.getItem() == par1ItemStack.getItem() && (!par1ItemStack.getHasSubtypes() || par1ItemStack.getItemDamage() == itemstack1.getItemDamage()) && ItemStack.areItemStackTagsEqual(par1ItemStack, itemstack1))
+			final int l = itemstack1.stackSize + par1ItemStack.stackSize;
+			if (l <= par1ItemStack.getMaxStackSize())
 			{
-				final int l = itemstack1.stackSize + par1ItemStack.stackSize;
-				if (l <= par1ItemStack.getMaxStackSize())
-				{
-					par1ItemStack.stackSize = 0;
-					itemstack1.stackSize = l;
-					inv.markDirty();
-					flag1 = true;
-				}
-				else if (itemstack1.stackSize < par1ItemStack.getMaxStackSize())
-				{
-					par1ItemStack.stackSize -= par1ItemStack.getMaxStackSize() - itemstack1.stackSize;
-					itemstack1.stackSize = par1ItemStack.getMaxStackSize();
-					inv.markDirty();
-					flag1 = true;
-				}
+				par1ItemStack.stackSize = 0;
+				itemstack1.stackSize = l;
+				inv.markDirty();
+				flag1 = true;
+			}
+			else if (itemstack1.stackSize < par1ItemStack.getMaxStackSize())
+			{
+				par1ItemStack.stackSize -= par1ItemStack.getMaxStackSize() - itemstack1.stackSize;
+				itemstack1.stackSize = par1ItemStack.getMaxStackSize();
+				inv.markDirty();
+				flag1 = true;
 			}
 		}
 		if (par1ItemStack.stackSize > 0)
@@ -245,7 +238,6 @@ public class StackHelper
 		final NBTTagCompound compound = new NBTTagCompound();
 		final NBTTagList items = new NBTTagList();
 		for (int i = 0; i < stacks.length; ++i)
-		{
 			if (stacks[i] != null)
 			{
 				final NBTTagCompound item = new NBTTagCompound();
@@ -253,7 +245,6 @@ public class StackHelper
 				stacks[i].writeToNBT(item);
 				items.appendTag(item);
 			}
-		}
 		compound.setTag("Items", items);
 		return compound;
 	}
@@ -306,20 +297,27 @@ public class StackHelper
 		return false;
 	}
 
-	public static void clearInv(IInventory tile)
+	public static void clearInv(IInventory inv)
 	{
-		for (int i = 0; i < tile.getSizeInventory(); i++)
+		for (int i = 0; i < inv.getSizeInventory(); i++)
 		{
-			tile.setInventorySlotContents(i, null);
+			inv.setInventorySlotContents(i, null);
 		}
 	}
 
-	public static int indexOfItem(IInventory tile, Item item)
+	public static int indexOfItem(IInventory inv, Item item)
 	{
-		for (int i = 0; i < tile.getSizeInventory(); i++)
-		{
-			if (tile.getStackInSlot(i) != null && tile.getStackInSlot(i).getItem() == item) return i;
-		}
+		for (int i = 0; i < inv.getSizeInventory(); i++)
+			if (inv.getStackInSlot(i) != null && inv.getStackInSlot(i).getItem() == item) return i;
 		return -1;
+	}
+
+	public static NBTTagCompound newNBT(ItemStack s)
+	{
+		if (s.stackTagCompound == null)
+		{
+			s.stackTagCompound = new NBTTagCompound();
+		}
+		return s.stackTagCompound;
 	}
 }

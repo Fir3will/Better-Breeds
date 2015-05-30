@@ -1,9 +1,9 @@
 package main.betterbreeds.render;
 
 import main.betterbreeds.BetterBreeds;
-import main.betterbreeds.entities.Gender;
-import main.betterbreeds.entities.Gender.Genderized;
-import net.minecraft.client.Minecraft;
+import main.betterbreeds.entities.EntityBChicken;
+import main.betterbreeds.render.models.ModelBChicken;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelChicken;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.entity.Entity;
@@ -18,42 +18,41 @@ import cpw.mods.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public class RenderBChicken extends RenderLiving
 {
-	private static final ResourceLocation female = new ResourceLocation(BetterBreeds.MODID + ":textures/entities/chicken/female_chicken.png");
-	private static final ResourceLocation male = new ResourceLocation(BetterBreeds.MODID + ":textures/entities/chicken/male_chicken.png");
+	private final ModelBase maleModel, femaleModel;
 
 	public RenderBChicken()
 	{
 		super(new ModelChicken(), 0.3F);
+		maleModel = new ModelBChicken(true);
+		femaleModel = new ModelBChicken(false);
 	}
 
 	@Override
 	protected ResourceLocation getEntityTexture(Entity e)
 	{
-		return Gender.getLocation("chicken", (Genderized) e);
+		if (e instanceof EntityBChicken && ((EntityBChicken) e).isChild()) return new ResourceLocation(BetterBreeds.MODID + ":textures/entities/chicken/Baby_Chicken.png");
+		return new ResourceLocation(BetterBreeds.MODID + ":textures/entities/chicken/Chicken.png");//Gender.getLocation("chicken", (Genderized) e);
 	}
 
 	@Override
-	protected void renderModel(EntityLivingBase p_77036_1_, float p_77036_2_, float p_77036_3_, float p_77036_4_, float p_77036_5_, float p_77036_6_, float p_77036_7_)
+	public void doRender(Entity _entity, double posX, double posY, double posZ, float var8, float var9)
 	{
-		super.renderModel(p_77036_1_, p_77036_2_, p_77036_3_, p_77036_4_, p_77036_5_, p_77036_6_, p_77036_7_);
-		bindTexture(((Genderized) p_77036_1_).isFemale() ? female : male);
+		final EntityBChicken chick = (EntityBChicken) _entity;
 
-		if (!p_77036_1_.isInvisible()) mainModel.render(p_77036_1_, p_77036_2_, p_77036_3_, p_77036_4_, p_77036_5_, p_77036_6_, p_77036_7_);
-		else if (!p_77036_1_.isInvisibleToPlayer(Minecraft.getMinecraft().thePlayer))
-		{
-			GL11.glPushMatrix();
-			GL11.glColor4f(1.0F, 1.0F, 1.0F, 0.15F);
-			GL11.glDepthMask(false);
-			GL11.glEnable(GL11.GL_BLEND);
-			GL11.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
-			GL11.glAlphaFunc(GL11.GL_GREATER, 0.003921569F);
-			mainModel.render(p_77036_1_, p_77036_2_, p_77036_3_, p_77036_4_, p_77036_5_, p_77036_6_, p_77036_7_);
-			GL11.glDisable(GL11.GL_BLEND);
-			GL11.glAlphaFunc(GL11.GL_GREATER, 0.1F);
-			GL11.glPopMatrix();
-			GL11.glDepthMask(true);
-		}
-		else mainModel.setRotationAngles(p_77036_2_, p_77036_3_, p_77036_4_, p_77036_5_, p_77036_6_, p_77036_7_, p_77036_1_);
+		GL11.glPushMatrix();
+		GL11.glDisable(GL11.GL_CULL_FACE);
+		mainModel = chick.isFemale() ? femaleModel : maleModel;
+		super.doRender(_entity, posX, posY, posZ, var8, var9);
+		GL11.glEnable(GL11.GL_CULL_FACE);
+		GL11.glPopMatrix();
+	}
+
+	@Override
+	protected void preRenderCallback(EntityLivingBase entityliving, float f)
+	{
+		GL11.glRotatef(180F, 0, 1F, 0F);
+		GL11.glRotatef(180F, 0, 0, 1F);
+		GL11.glTranslatef(0F, 3.5F, 0F);
 	}
 
 	@Override

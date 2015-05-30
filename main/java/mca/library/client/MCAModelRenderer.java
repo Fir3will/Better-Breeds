@@ -15,9 +15,9 @@ import org.lwjgl.opengl.GL11;
 public class MCAModelRenderer extends ModelRenderer
 {
 	/** Custom version, as parent variable is PRIVATE */
-	private int DDStextureOffsetX;
+	public int DDStextureOffsetX;
 	/** Custom version, as parent variable is PRIVATE */
-	private int DDStextureOffsetY;
+	public int DDStextureOffsetY;
 	/** Custom version, as parent variable is PRIVATE */
 	private boolean DDScompiled;
 	/** Custom version, as parent variable is PRIVATE */

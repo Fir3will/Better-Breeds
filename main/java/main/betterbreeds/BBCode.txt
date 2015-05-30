@@ -13,7 +13,7 @@ The animals currently switched are:
 To breed animals, there are some prerequisites:
 - They have to be a male and a female. They can't be both male or both female
 - They have to be in the best health. Meaning max health.
-- They have to be different species... Obviously
+- They have to be of the same species... Obviously
 - And they have to both be in love!
 
 NOTE: These options are customizable in the config.
@@ -53,7 +53,7 @@ Male- Dark Green Eyes
 Female- Dark Blue Eyes
 [/spoiler]
 
-I also added tons of different textures for each animal. There are 10 textures for all the switched animals! When an animal's born, there is a 50% chance (can be changed in the config) that the offspring will have the same texture as one of the parents. The only animal what wasn't textured differently was the Sheep. That couldn't get too much of a different texture because it was color-based but I will try something. Make patterns in the wool, etc.
+There are also tons of different textures for each animal. There are 10 textures for all the animals that this mod replaces! When two animals mate, there is a 50% chance (can be changed in the config) that the offspring will have the same texture as one of the parents. The only animal what wasn't textured differently was the Sheep. That couldn't get too much of a different texture because it was color-based but I will try something. Make patterns in the wool, etc.
 [/spoiler]
 
 [img]http://i1279.photobucket.com/albums/y523/textcraft/Aug%202014%20-%204/90d2496cb9b91c63e3c0a4b0018635d5391f6a75da39a3ee5e6b4b0d3255bfef95601890afd80709da39a3ee5e6b4b0d3255bfef95601890afd80709e70d6f1c27e7e53ed5da_zps6d0bbdc5.png[/img]
@@ -74,6 +74,12 @@ Forums Page: [url=http://www.minecraftforum.net/members/YourMC]YourMC[/url]
 [color=rgb(153, 153, 153)]4. Place the Better Breeds Jar inside of the mods folder.[/color]
 [color=rgb(153, 153, 153)]5. Enjoy![/color]
 [color=rgb(153, 153, 153)]If you have any issues or Crash Reports, Feel free to post a comment below![/color]
+
+[IMG]http://i1279.photobucket.com/albums/y523/textcraft/Mar%202015%20-%204/83178533d03a6b344232f56ec21c34779b15bc102334656a539be9de5f2448a403ca9217d4e8570a411c5d807875ad8009db4a1746bfb9039391229c8834_zpssowhn0p6.png[/IMG]
+[spoiler]
+[b]All Helpers go here! Feel free to leave a suggestion or anything![/b]
+[url=http://www.minecraftforum.net/members/LunariusH]LunariusH[/url]- Massive Shoutout to the Captain. He helped a lot with creating the pregnancy mechanism with the animals!
+[/spoiler]
 
 [img]http://i1279.photobucket.com/albums/y523/textcraft/Aug%202014%20-%204/6bd82992110e09a39eb5bbcb9a3a143895eba286da39a3ee5e6b4b0d3255bfef95601890afd80709da39a3ee5e6b4b0d3255bfef95601890afd80709e70d6f1c27e7e53ed5da_zps6f2d421b.png[/img]
 [spoiler]
@@ -97,15 +103,13 @@ Forums Page: [url=http://www.minecraftforum.net/members/YourMC]YourMC[/url]
 [img]http://i1279.photobucket.com/albums/y523/textcraft/Aug%202014%20-%204/4389454ee0098ab64e8d20fa6ead167530711836da39a3ee5e6b4b0d3255bfef95601890afd80709da39a3ee5e6b4b0d3255bfef95601890afd807094f829e5e3095a6f237ee_zpsb4568aa0.png[/img]
 [spoiler]
 Place this in your Signature:
-[code]
-[url=http://www.minecraftforum.net/forums/mapping-and-modding/minecraft-mods/wip-mods/2330761-1-7-10-0-1b-better-breeds-mod-different-gender][img]http://i1279.photobucket.com/albums/y523/textcraft/Jan%202015%20-%203/aba912636d51e6c8ec6d823611c9a64cd1679d30c0f2ae0896cc5be08a3b3767ead78ddb962fa05cda39a3ee5e6b4b0d3255bfef95601890afd8070963070538f4b38aad8cbe_zps19f70794.png[/img][/url]
-[/code]
-[url=http://www.minecraftforum.net/forums/mapping-and-modding/minecraft-mods/wip-mods/2330761-1-7-10-0-1b-better-breeds-mod-different-gender][img]http://i1279.photobucket.com/albums/y523/textcraft/Jan%202015%20-%203/aba912636d51e6c8ec6d823611c9a64cd1679d30c0f2ae0896cc5be08a3b3767ead78ddb962fa05cda39a3ee5e6b4b0d3255bfef95601890afd8070963070538f4b38aad8cbe_zps19f70794.png[/img][/url]
+To place this in your signature, copy the image URL below and paste it into a [code][img]image here[/img][/code] tag and surround that with the site's URL.
+[img]http://i1279.photobucket.com/albums/y523/textcraft/Jan%202015%20-%203/aba912636d51e6c8ec6d823611c9a64cd1679d30c0f2ae0896cc5be08a3b3767ead78ddb962fa05cda39a3ee5e6b4b0d3255bfef95601890afd8070963070538f4b38aad8cbe_zps19f70794.png[/img]
 [/spoiler]
 [/center]
 
 [img]http://i1279.photobucket.com/albums/y523/textcraft/Aug%202014%20-%204/fcd9edf7490bfa41dede583deebb184e5424fea0da39a3ee5e6b4b0d3255bfef95601890afd80709da39a3ee5e6b4b0d3255bfef95601890afd80709e70d6f1c27e7e53ed5da_zps4200c68a.png[/img]
 [spoiler=License]
-This mod (Henceforth "Better Breeds Mod" or "Better Breeds") Is in no way to be redistributed without consent through Email, Message, Text, Call, etc. (Review this with the Owner). Using any URL shorteners or any other service from where you are able to profit from this mod are strictly forbidden. Any violation to this terms of use or Licence will result in major penalty from the Mod Creator and from outside sources. Proceed with Caution, but Have Fun!
+This document is Copyright ©(2015) of Hashim Kayani (hereafter referred to as "The Owner") and is the intellectual property of The Owner. Only Minecraftforum.net and mcmodcenter.net is able to host any of The Owner's material without the consent of The Owner. It may not be placed on any other web site or otherwise distributed publicly without advance written permission. Inclusion in a modpack is permitted considering that profit is restricted to a bare zero. (Electronic mail is acceptable as long as you wait for a response.) If you mirror this mod page or anything The Owner has made on any other site, The Owner may seek compensation for the damages through a lawsuit.
 [/spoiler]
 [/center]

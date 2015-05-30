@@ -9,6 +9,9 @@ public class AnimationHandlerChicken extends AnimationHandler
 {
 	public static HashMap<String, Channel> animChannels = new HashMap<String, Channel>();
 
+	static
+	{}
+
 	public AnimationHandlerChicken(IMCAnimatedEntity entity)
 	{
 		super(entity);

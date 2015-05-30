@@ -45,34 +45,49 @@ public class Breeds
 
 	private void doStuff(EntityCreature entity)
 	{
-		if (mobToSwitch.containsKey(entity.getClass())) try
+		if (mobToSwitch.containsKey(entity.getClass()))
 		{
-			final Class<? extends EntityCreature> c = mobToSwitch.get(entity.getClass());
-			final EntityCreature switched = c.getConstructor(World.class).newInstance(entity.worldObj);
-			if (switched != null && switchIsAllowed.get(c)) switchMobs(entity, switched);
-		}
-		catch (final Exception e)
-		{
-			e.printStackTrace();
+			try
+			{
+				final Class<? extends EntityCreature> c = mobToSwitch.get(entity.getClass());
+				final EntityCreature switched = c.getConstructor(World.class).newInstance(entity.worldObj);
+				if (switched != null && switchIsAllowed.get(c))
+				{
+					switchMobs(entity, switched);
+				}
+			}
+			catch (final Exception e)
+			{
+				e.printStackTrace();
+			}
 		}
 	}
 
 	@SubscribeEvent
 	public void onEntityJoin(EntityJoinWorldEvent event)
 	{
-		if (event.entity instanceof EntityCreature) doStuff((EntityCreature) event.entity);
+		if (event.entity instanceof EntityCreature)
+		{
+			doStuff((EntityCreature) event.entity);
+		}
 	}
 
 	@SubscribeEvent
 	public void onEntityUpdate(LivingUpdateEvent event)
 	{
-		if (event.entity instanceof EntityCreature) doStuff((EntityCreature) event.entity);
+		if (event.entity instanceof EntityCreature)
+		{
+			doStuff((EntityCreature) event.entity);
+		}
 	}
 
 	private void switchMobs(EntityCreature entity, EntityCreature entity2)
 	{
 		entity2.copyLocationAndAnglesFrom(entity);
-		if (MPUtil.isServerSide()) entity.worldObj.spawnEntityInWorld(entity2);
+		if (MPUtil.isServerSide())
+		{
+			entity.worldObj.spawnEntityInWorld(entity2);
+		}
 		entity.setDead();
 		entity2.onSpawnWithEgg(null);
 	}
