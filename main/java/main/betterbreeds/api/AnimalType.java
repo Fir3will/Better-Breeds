@@ -43,6 +43,12 @@ public enum AnimalType
 	 */
 	public final boolean originalBBAnimal;
 
+	/**
+	 * The types of animals that can be altered.
+	 * 
+	 * @param animalClass The class of the animal
+	 * @param originalBBAnimal Whether it's an animal added by this mod or not.
+	 */
 	private AnimalType(Class<? extends Genderized> animalClass, boolean originalBBAnimal)
 	{
 		this.animalClass = animalClass;

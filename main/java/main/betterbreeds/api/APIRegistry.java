@@ -2,7 +2,10 @@ package main.betterbreeds.api;
 
 import java.util.ArrayList;
 import java.util.List;
+import org.apache.logging.log4j.Level;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
+import cpw.mods.fml.common.FMLLog;
 
 /**
  * A helper class that will allow 
@@ -61,6 +64,7 @@ public final class APIRegistry
 	 */
 	public void registerDropHandler(AnimalDropHandler handler)
 	{
+		doBeforeStuff(handler);
 		dropHandlers.add(handler);
 	}
 
@@ -75,6 +79,7 @@ public final class APIRegistry
 	 */
 	public void registerDeathHandler(AnimalDeathHandler handler)
 	{
+		doBeforeStuff(handler);
 		deathHandlers.add(handler);
 	}
 
@@ -90,6 +95,7 @@ public final class APIRegistry
 	 */
 	public void registerInitHandler(AnimalInitHandler handler)
 	{
+		doBeforeStuff(handler);
 		initHandlers.add(handler);
 	}
 
@@ -110,6 +116,7 @@ public final class APIRegistry
 	 */
 	public void registerPregnancyHandler(AnimalPregnancyHandler handler)
 	{
+		doBeforeStuff(handler);
 		pregnancyHandlers.add(handler);
 	}
 
@@ -125,6 +132,7 @@ public final class APIRegistry
 	 */
 	public void registerGenderHandler(AnimalGenderHandler handler)
 	{
+		doBeforeStuff(handler);
 		genderHandlers.add(handler);
 	}
 
@@ -140,6 +148,7 @@ public final class APIRegistry
 	 */
 	public void registerTypeHandler(AnimalTypeHandler handler)
 	{
+		doBeforeStuff(handler);
 		typeHandlers.add(handler);
 	}
 
@@ -154,6 +163,7 @@ public final class APIRegistry
 	 */
 	public void registerUpdateHandler(AnimalUpdateHandler handler)
 	{
+		doBeforeStuff(handler);
 		updateHandlers.add(handler);
 	}
 
@@ -179,6 +189,7 @@ public final class APIRegistry
 	 */
 	public void registerAnimalAdapter(AnimalHandlerAdapter adapter)
 	{
+		doBeforeStuff(adapter);
 		registerDropHandler(adapter);
 		registerDeathHandler(adapter);
 		registerInitHandler(adapter);
@@ -196,7 +207,7 @@ public final class APIRegistry
 	 * 
 	 * @return An Immutable list of all the Drop Handlers
 	 */
-	public final List<AnimalDropHandler> getDropHandlers()
+	public List<AnimalDropHandler> getDropHandlers()
 	{
 		return ImmutableList.copyOf(dropHandlers);
 	}
@@ -209,7 +220,7 @@ public final class APIRegistry
 	 * 
 	 * @return An Immutable list of all the Death Handlers
 	 */
-	public final List<AnimalDeathHandler> getDeathHandlers()
+	public List<AnimalDeathHandler> getDeathHandlers()
 	{
 		return ImmutableList.copyOf(deathHandlers);
 	}
@@ -222,7 +233,7 @@ public final class APIRegistry
 	 * 
 	 * @return An Immutable list of all the Init Handlers
 	 */
-	public final List<AnimalInitHandler> getInitHandlers()
+	public List<AnimalInitHandler> getInitHandlers()
 	{
 		return ImmutableList.copyOf(initHandlers);
 	}
@@ -235,7 +246,7 @@ public final class APIRegistry
 	 * 
 	 * @return An Immutable list of all the Pregnancy Handlers
 	 */
-	public final List<AnimalPregnancyHandler> getPregnancyHandlers()
+	public List<AnimalPregnancyHandler> getPregnancyHandlers()
 	{
 		return ImmutableList.copyOf(pregnancyHandlers);
 	}
@@ -248,7 +259,7 @@ public final class APIRegistry
 	 * 
 	 * @return An Immutable list of all the Gender Handlers
 	 */
-	public final List<AnimalGenderHandler> getGenderHandlers()
+	public List<AnimalGenderHandler> getGenderHandlers()
 	{
 		return ImmutableList.copyOf(genderHandlers);
 	}
@@ -261,7 +272,7 @@ public final class APIRegistry
 	 * 
 	 * @return An Immutable list of all the Type Handlers
 	 */
-	public final List<AnimalTypeHandler> getTypeHandlers()
+	public List<AnimalTypeHandler> getTypeHandlers()
 	{
 		return ImmutableList.copyOf(typeHandlers);
 	}
@@ -274,8 +285,14 @@ public final class APIRegistry
 	 * 
 	 * @return An Immutable list of all the Update Handlers
 	 */
-	public final List<AnimalUpdateHandler> getUpdateHandlers()
+	public List<AnimalUpdateHandler> getUpdateHandlers()
 	{
 		return ImmutableList.copyOf(updateHandlers);
+	}
+
+	private void doBeforeStuff(Object handler)
+	{
+		Preconditions.checkNotNull(handler, "handler must not be null!");
+		FMLLog.log("BetterBreeds", Level.INFO, "Registered Handler: " + handler.getClass().getName());
 	}
 }

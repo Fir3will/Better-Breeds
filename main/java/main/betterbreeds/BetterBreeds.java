@@ -1,10 +1,10 @@
 package main.betterbreeds;
 
-import java.lang.reflect.Method;
-import java.lang.reflect.Modifier;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import main.betterbreeds.api.APIRegistry;
+import main.betterbreeds.api.BBAPIRegistryHandler;
 import main.betterbreeds.entities.EntityBChicken;
 import main.betterbreeds.entities.EntityBCow;
 import main.betterbreeds.entities.EntityBPig;
@@ -87,28 +87,34 @@ public class BetterBreeds
 			IMCMessage msg = list.get(i);
 			if (msg.isStringMessage())
 			{
-				try
+				if (msg.key.equalsIgnoreCase("api-registry"))
 				{
-					String s = msg.getStringValue();
-					int l = s.lastIndexOf(".");
-					if (l < 0) throw new IllegalArgumentException("msg doesn't have a class or method!");
-					String c = s.substring(0, l);
-					String m = s.substring(l + 1);
-					System.out.println(c + ", " + m);
-					Class<?> clazz = Class.forName(c);
-					Method met = clazz.getMethod(m, new Class[] { APIRegistry.class });
-					if (Modifier.isPublic(met.getModifiers()) && Modifier.isStatic(met.getModifiers()) && met.getReturnType().equals(Void.TYPE))
+					try
 					{
-						APIRegistry registry = new APIRegistry();
-						met.invoke(null, registry);
-						BBAPI.addLists(registry);
+						try
+						{
+							Class<?> clazz = Class.forName(msg.getStringValue());
+							List<Class<?>> interfaces = Arrays.asList(clazz.getInterfaces());
+							if (interfaces.contains(BBAPIRegistryHandler.class))
+							{
+								BBAPIRegistryHandler handler = (BBAPIRegistryHandler) clazz.newInstance();
+								APIRegistry registry = new APIRegistry();
+								handler.handlerAPIRegistry(registry);
+								BBAPI.addLists(registry);
+							}
+							else throw new IllegalArgumentException(clazz.getName() + " must implement BBAPIRegistryHandler!");
+						}
+						catch (ClassNotFoundException e)
+						{
+							throw new IllegalArgumentException(msg.getStringValue() + " doesn't exist!", e);
+						}
 					}
-					else throw new IllegalArgumentException(c + "." + m + " must be public, static, and must be void!");
+					catch (Exception e)
+					{
+						throw new RuntimeException("Error caught handling message from \"" + msg.getSender() + "\"", e);
+					}
 				}
-				catch (Exception e)
-				{
-					throw new IllegalArgumentException("Error caught handling message from \"" + msg.getSender() + "\"", e);
-				}
+				else throw new IllegalArgumentException("msg.key must equal \"api-registry\"");
 			}
 			else throw new IllegalArgumentException("msg must have a string message to be processed!");
 		}

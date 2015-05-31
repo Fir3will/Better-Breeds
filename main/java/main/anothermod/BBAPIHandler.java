@@ -1,11 +1,13 @@
 package main.anothermod;
 
 import main.betterbreeds.api.APIRegistry;
+import main.betterbreeds.api.BBAPIRegistryHandler;
 
-public class BBAPIHandler
+public class BBAPIHandler implements BBAPIRegistryHandler
 {
-	public static void handleBBAPI(APIRegistry registry)
+	@Override
+	public void handlerAPIRegistry(APIRegistry registry)
 	{
-		System.out.println("Called!");
+
 	}
 }
